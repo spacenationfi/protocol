@@ -1,39 +1,54 @@
+
 # Orbit
 
 ## Contracts
 Bundle crypto assets into baskets represented by ERC20 tokens. Launch Indecies, structured products, and leveraged tokens on AURORA.
 
+## Development
+
+To use console.log during Solidity development, follow the [guides](https://hardhat.org/guides/hardhat-console.html).
+
+## Available Functionality
+
+### Run Hardhat EVM
+
+`yarn chain`
+
+### Build Contracts
+
+`yarn compile`
+
+To speed up compilation, install solc 0.6.10 natively with the following command.
+```
+brew install https://raw.githubusercontent.com/ethereum/homebrew-ethereum/06d13a8499801dc3ea4f19b2d24ed2eeb3072ebb/solidity.rb
+```
+
+### Generate TypeChain Typings
+
+`yarn build`
+
+### Run Contract Tests
+
+`yarn test` to run compiled contracts
+
+OR `yarn test:clean` if contracts have been typings need to be updated
+
+### Run Coverage Report for Tests
+
+`yarn coverage`
+
+## Installing from `npm`
+
+```
+npm install
+```
+
 ## Contributing
-We highly encourage participation from the community to help shape the development of Orbit. If you are interested in developing on top of Orbit's code and oracles, or have any questions, please ping us on Discord.
+We highly encourage participation from the community to help shape the development of Orbit. If you are interested in developing on top of Orbit Protocol or have any questions, please ping us on [Discord](https://discord.gg/5M6ZBjXdan).
 
+## Security
 
-## Testing
-0. Docker Set up
+### Code Coverage
 
-    Firstly, you need to install Docker. The easiest way is to follow the Instructions on https://docs.docker.com/install/#supported-platforms
+All smart contracts are tested and have 100% line and branch coverage.
 
-    You need to pull the docker image that you want to use by using the following command:
-
-    ```
-    docker pull ethereum/solc:0.5.7
-    ```
-
-    If you wish not to set up docker, you can turn off the `docker: true` flag in truffle.js
-
-1. Run yarn install
-
-    ```
-    yarn install
-    ```
-
-2. Run an ethereum chain on a separate terminal window
-
-    ```
-    yarn chain
-    ```
-
-3. Run unit tests
-
-    ```
-    yarn test
-    ```

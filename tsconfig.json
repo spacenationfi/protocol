@@ -1,37 +1,31 @@
 {
   "compilerOptions": {
-    "outDir": "./transpiled/",
-    "sourceMap": true,
-    "noImplicitAny": false,
-    "resolveJsonModule": true,
-    "lib": ["dom", "es2015", "es2016", "es2017"],
+    "target": "es5",
     "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "strictPropertyInitialization": false,
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationDir": "./dist/types",
+    "declarationMap": true,
+    "sourceMap": true,
     "baseUrl": ".",
     "moduleResolution": "node",
     "paths": {
-        "@utils/*": [ "utils/*" ]
-    },
-    "rootDir": ".",
-    "target": "es5",
-    "allowJs": true,
-    "typeRoots": [
-      "node_modules/@0xproject/types",
-      "node_modules/set-protocol-utils/types",
-      "node_modules/@types"
-    ],
-    "esModuleInterop": true,
-    "skipLibCheck": true
+        "@utils/*": ["utils/*"],
+        "@typechain/*": ["typechain/*"]
+    }
   },
   "include": [
-    "artifacts/*.ts",
-    "artifacts/ts/*.ts",
-    "types/*.ts",
-    "utils/**/*.ts",
-    "test/**/*.ts"
+    "./test/**/*.ts",
+    "./utils/**/*.ts",
+    "./deploy/**/*.ts",
+    "./typechain/**/*.ts",
+    "./tasks/**/*.ts"
   ],
   "files": [
-    "./buidler.config.ts",
-    "./node_modules/@nomiclabs/buidler-web3/src/type-extensions.d.ts",
-    "./node_modules/@nomiclabs/buidler-truffle5/src/type-extensions.d.ts"
+    "hardhat.config.ts",
   ]
 }
