@@ -1,6 +1,20 @@
 
 # Orbit
 
+## Usage
+
+Spin up a mainnet-fork node locally with:
+```ssh
+npx hardhat node --fork https://mainnet.aurora.dev
+```
+
+Deploy contracts on mainnet-fork with:
+```ssh
+yarn hardhat run scripts/deploy.ts --network hardhat
+```
+
+Tip: Use a HH account private key when using mainnet fork.
+
 ## Contracts
 Bundle crypto assets into baskets represented by ERC20 tokens. Launch Indecies, structured products, and leveraged tokens on AURORA.
 

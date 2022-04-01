@@ -1,6 +1,6 @@
 import type { ethers } from "ethers";
 import { NetworkConfig } from "hardhat/types";
-
+import { BigNumber } from "bignumber.js";
 
 // Adds a `gas` field to the ABI function elements so that ethers doesn't
 // automatically estimate gas limits on every call. Halves execution time.
@@ -9,7 +9,7 @@ export function addGasToAbiMethods(
   networkConfig: NetworkConfig,
   abi: any[]
 ): any[] {
-  const { BigNumber } = require("ethers") as typeof ethers;
+  // const { BigNumber } = require("ethers") as typeof ethers;
 
   // Stay well under network limit b/c ethers adds a margin
   // Also need special setting logic for coverage b/c it compiles
@@ -22,7 +22,9 @@ export function addGasToAbiMethods(
     gas = networkConfig.gas as number;
   }
 
-  const gasLimit = BigNumber.from(gas).sub(1000000).toHexString();
+  const gasLimit = new BigNumber(gas).minus(1000000).toFixed();
+  // const gasLimit = new BigNumber(1000000)
+
 
   const modifiedAbi: any[] = [];
 

@@ -47,7 +47,8 @@
     "transpile:dist:latest": "tsc --project tsconfig.dist.json",
     "transpile:dist:hardhat": "tsc --project tsconfig.hardhat.json",
     "typechain": "npx hardhat typechain",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "deploy:aurora": "yarn clean && yarn compile && npx hardhat run scripts/mainnet-deploy.ts --network mainnet_aurora"
   },
   "repository": {
     "type": "git",
